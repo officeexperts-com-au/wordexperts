@@ -1,0 +1,93 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.wordexperts.com.au/companies-and-organisations/",
+      "url": "https://www.wordexperts.com.au/companies-and-organisations/",
+      "name": "Word Template Designers | Word Document Designer | Word Experts",
+      "isPartOf": {
+        "@id": "https://www.wordexperts.com.au/#website"
+      },
+      "datePublished": "2018-07-15T16:09:50+00:00",
+      "dateModified": "2024-06-18T02:41:26+00:00",
+      "breadcrumb": {
+        "@id": "https://www.wordexperts.com.au/companies-and-organisations/#breadcrumb"
+      },
+      "inLanguage": "en-AU",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.wordexperts.com.au/companies-and-organisations/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.wordexperts.com.au/companies-and-organisations/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.wordexperts.com.au/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Companies and Organisations"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.wordexperts.com.au/#website",
+      "url": "https://www.wordexperts.com.au/",
+      "name": "Word Experts - Microsoft Word Design, Development and Consulting, Office Experts Group",
+      "description": "Your Microsoft Office Design, Development and Consulting Experts",
+      "publisher": {
+        "@id": "https://www.wordexperts.com.au/#organization"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.wordexperts.com.au/?s={search_term_string}"
+          },
+          "query-input": {
+            "@type": "PropertyValueSpecification",
+            "valueRequired": true,
+            "valueName": "search_term_string"
+          }
+        }
+      ],
+      "inLanguage": "en-AU"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.wordexperts.com.au/#organization",
+      "name": "Office Experts Group",
+      "url": "https://www.wordexperts.com.au/",
+      "logo": {
+        "@type": "ImageObject",
+        "inLanguage": "en-AU",
+        "@id": "https://www.wordexperts.com.au/#/schema/logo/image/",
+        "url": "https://www.wordexperts.com.au/wp-content/uploads/2017/11/Office-Experts-Group_Excel-Experts_Access-Experts_Word-Experts-365-Experts_PowerPoint-Experts_Logo_1181x1181.gif",
+        "contentUrl": "https://www.wordexperts.com.au/wp-content/uploads/2017/11/Office-Experts-Group_Excel-Experts_Access-Experts_Word-Experts-365-Experts_PowerPoint-Experts_Logo_1181x1181.gif",
+        "width": 1181,
+        "height": 1181,
+        "caption": "Office Experts Group"
+      },
+      "image": {
+        "@id": "https://www.wordexperts.com.au/#/schema/logo/image/"
+      },
+      "sameAs": [
+        "https://www.facebook.com/MSOfficeExperts",
+        "https://x.com/OfficeExpertsG1"
+      ]
+    }
+  ]
+}
