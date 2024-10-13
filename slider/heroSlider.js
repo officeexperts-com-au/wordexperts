@@ -12,10 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
         i = index;
         slides[i].classList.add("active");
         slides[i].querySelectorAll(".icon").forEach(icon => {
-            icon.classList.add("animate"); // Add animation class
+            setTimeout(() => icon.classList.add("animate"), 10); // Slight delay to trigger the animation
         });
     }
-
 
     function showNextSlide() {
         showSlide((i + 1) % slides.length);
@@ -25,8 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         showSlide((i - 1 + slides.length) % slides.length);
     }
 
-    // Increased interval to 6100ms to account for all transitions
-    var slideInterval = setInterval(showNextSlide, 6100);
+    var slideInterval = setInterval(showNextSlide, 6000);
 
     var nextBtn = document.querySelector(".next");
     var prevBtn = document.querySelector(".prev");

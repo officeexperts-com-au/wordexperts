@@ -63,6 +63,7 @@ body {
 }
 
 .caption {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,9 +78,40 @@ body {
     opacity: 0;
     transform: translateY(-20px);
     animation: fadeInOutSlideDown var(--total-duration) ease-in-out infinite;
-    animation-delay: var(--transition-duration);
-
+    animation-delay: 0s;
 }
+
+.preTitle p {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    color: #ffffff;
+    font-size: clamp(1rem, 2vw, 2rem);
+    letter-spacing: 1px;
+    opacity: 1;
+    animation: fadeOut 2s ease forwards;
+    z-index: 20;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 
 .block:nth-child(even) .caption {
     animation-name: fadeInOutSlideUp;
@@ -137,6 +169,7 @@ p {
 
 .icon-block {
     background-color: #8ed1fc;
+    position: relative;
 }
 
 .icon-block .icon-caption {
@@ -162,39 +195,30 @@ p {
 
 .icon {
     opacity: 0;
-    transition: all 1s ease;
+    transform: translateX(-60px);
+    /* Start with hidden and off-screen */
 }
 
 .icon.animate {
-    animation: opacity 1s forwards;
+    animation: slideIn 1s forwards;
 }
 
-.icon1 {
+.icon1.animate {
     animation-delay: 0.5s;
 }
 
-.icon2 {
+.icon2.animate {
     animation-delay: 1s;
 }
 
-.icon3 {
+.icon3.animate {
     animation-delay: 1.5s;
 }
 
-@keyframes opacity {
+@keyframes slideIn {
     0% {
         opacity: 0;
         transform: translateX(-60px);
-    }
-
-    40% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    80% {
-        opacity: 1;
-        transform: translateX(0);
     }
 
     100% {
@@ -202,9 +226,6 @@ p {
         transform: translateX(0);
     }
 }
-
-
-
 
 .arrows {
     display: flex;
