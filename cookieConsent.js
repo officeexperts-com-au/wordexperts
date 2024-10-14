@@ -1,16 +1,8 @@
 // load in header.php, or in the body of our base url path.
-// Save cookie settings to localStorage as an easy win?!?
-// either use some middlware to get headers? Not sure how to do that with WP.
-// OR at least implement a getLocalStorage function 'accepetdCookies' = true (stop haslling them!)
-// Easy win getLocalStorage 'acceptedCookies' = true, enable alaytilics, else, hassle them again!
 
 // additional notes, this only works for wordexperts.com.au, it would be much nicer for it to encompass all the relevant URL's, lets look into that. ( to avoid cookie consent on every URL)
 
-// *THIS IS NOT SERVER SIDE RENDERED. This will effect our page speed, would be much nicer to activate on a scroll event, or setTimeout? Delay the execution of the script because analytics is less crucial than actual cusomers handing over dollar dollar bills ya'll!
-
-// I think (I = Dan) we should opt for as much as possible on the server, this code does not seat at that table, but at least we will be legal for now!
-
-// No styling has been implemented. This is pure boilerplate...
+// set to trigger on scroll event
 
 function createCookieConsentBanner() {
     const banner = document.createElement('div');
@@ -80,11 +72,16 @@ function loadGoogleAnalytics() {
     })(window, document, 'script', 'dataLayer', 'GTM-W2ZMP2P3');
 }
 
-window.addEventListener('load', () => {
-    const consent = getCookie('cookieConsent');
-    if (consent === 'accepted') {
-        loadGoogleAnalytics();
-    } else if (consent === '') {
-        createCookieConsentBanner();
+// Check for existing consent and load the banner if needed
+let hasScrolled = false;
+window.addEventListener('scroll', () => {
+    if (!hasScrolled) {
+        hasScrolled = true;
+        const consent = getCookie('cookieConsent');
+        if (consent === 'accepted') {
+            loadGoogleAnalytics();
+        } else if (consent === '') {
+            createCookieConsentBanner();
+        }
     }
-});
+}, { once: true });
